@@ -1,13 +1,345 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  font-family: SourceSansPro;
+  margin: 0 auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.center {
+  text-align: center;
+}
+a {
+  color: #636363;
+  text-decoration: none;
+  transition: all 0.5s ease-in;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Post Styles */
+.post-container {
+  width: 1280px;
+  height: 768px;
+  background-color: #ffffff;
+  font-family: "SourceSansPro", sans-serif;
+  margin: 0 auto;
+}
+
+.post_heading {
+  width: 213px;
+  height: 38px;
+  font-family: SourceSansPro;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.58;
+  letter-spacing: normal;
+  color: #1b2834;
+  position: absolute;
+  left: 326px;
+  top: 48px;
+}
+
+.Rectangle-926-Copy-3 {
+  width: 410px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px 0 rgba(27, 40, 52, 0.08);
+  border: solid 1px #d4d8db;
+  background-color: rgba(27, 40, 52, 0.01);
+  margin-top: 0;
+  position: absolute;
+  left: 326px;
+  top: 140px;
+}
+.headingInput {
+  position: absolute;
+  left: 326px;
+  top: 140px;
+}
+
+.Rectangle-926-Copy-6 {
+  width: 410px;
+  height: 147px;
+  object-fit: contain;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px 0 rgba(27, 40, 52, 0.08);
+  border: solid 1px #d4d8db;
+  background-color: rgba(27, 40, 52, 0.01);
+  position: absolute;
+  left: 326px;
+  top: 235px;
+}
+.textInput {
+  position: absolute;
+  left: 326px;
+  top: 235px;
+}
+.telInput {
+  position: absolute;
+  left: 326px;
+  top: 441px;
+}
+.label {
+  height: 22px;
+  font-family: SourceSansPro;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #68717c;
+}
+
+.headingLabel {
+  position: absolute;
+  left: 326px;
+  top: 110px;
+}
+
+.textLabel {
+  position: absolute;
+  left: 326px;
+  top: 205px;
+}
+
+.telLabel {
+  position: absolute;
+  left: 326px;
+  top: 411px;
+}
+
+.BG {
+  width: 141px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 0 rgba(27, 40, 52, 0.16);
+  background-image: linear-gradient(to bottom, #2d74da, #2367c8);
+  position: absolute;
+  left: 327px;
+  top: 668px;
+}
+
+.bgText {
+  width: 45px;
+  height: 18px;
+  font-family: SourceSansPro;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  position: absolute;
+  left: 48px;
+  top: 8px;
+  z-index: 10;
+  margin: 0;
+}
+
+.help-copy {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+.help-1 {
+  position: absolute;
+  left: 761px;
+  top: 140px;
+}
+.help-2 {
+  position: absolute;
+  left: 761px;
+  top: 235px;
+}
+.help-3 {
+  position: absolute;
+  left: 761px;
+  top: 444px;
+}
+
+.helper {
+  font-family: SourceSansPro;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #68717c;
+  margin: 0;
+}
+.success {
+  color: #16c98d;
+}
+.error {
+  color: #fa5e5b;
+}
+.headerHelper {
+  width: 142px;
+  height: 44px;
+  position: absolute;
+  left: 783px;
+  top: 140px;
+}
+.textHelper {
+  width: 142px;
+  height: 22px;
+  position: absolute;
+  left: 783px;
+  top: 235px;
+}
+.telHelper {
+  width: 121px;
+  height: 22px;
+  position: absolute;
+  left: 783px;
+  top: 443px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: left;
+}
+
+/* All Posts */
+
+.allPostHeading {
+  width: 134px;
+  height: 38px;
+  font-family: SourceSansPro;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.58;
+  letter-spacing: normal;
+  color: #1b2834;
+  margin: 0 auto;
+  position: absolute;
+  left: 326px;
+  top: 758px;
+}
+
+.post {
+  background: #fff;
+  margin: 0 auto;
+  padding: 0px;
+  margin-bottom: 20px;
+  position: relative;
+  top: 28px;
+  min-height: 296px;
+}
+
+.post_title {
+  width: 119px;
+  height: 22px;
+  font-family: SourceSansPro;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.22;
+  letter-spacing: normal;
+  color: #1b2834;
+  position: absolute;
+  left: 326px;
+  top: 0px;
+}
+
+.post_message {
+  width: 266px;
+  height: 22px;
+  font-family: SourceSansPro;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #68717c;
+  position: absolute;
+  left: 326px;
+  top: 24px;
+}
+
+.post_tel {
+  width: 120px;
+  height: 22px;
+  font-family: SourceSansPro;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: #1b2834;
+  position: absolute;
+  left: 791px;
+  top: 0px;
+}
+
+.control-buttons {
+  display: flex;
+}
+
+.delete {
+  width: 178px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 3px;
+  border: solid 1px #fa5e5b;
+  position: absolute;
+  left: 760px;
+  top: 266px;
+}
+.deleteText {
+  width: 51px;
+  height: 18px;
+  font-family: SourceSansPro;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #fa5e5b;
+  position: absolute;
+  left: 64px;
+  top: 8px;
+  margin: 0;
+}
+.editText {
+  width: 94px;
+  height: 18px;
+  font-family: SourceSansPro;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #2d74da;
+  position: absolute;
+  left: 42px;
+  top: 8px;
+  margin: 0;
+}
+.edit {
+  width: 178px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 3px;
+  border: solid 1px #2d74da;
+  position: absolute;
+  left: 760px;
+  top: 216px;
 }
