@@ -23,7 +23,7 @@ class EditComponent extends Component {
       telValid: false,
       msgValid: false,
       submitDisabled: false,
-      backgroundImage: "linear-gradient(to bottom, #2d74da, #2367c8)",
+
       editing: true
     };
     this.baseState = this.state;
@@ -56,12 +56,10 @@ class EditComponent extends Component {
     );
     headerValid && msgValid && telValid
       ? this.setState({
-          submitDisabled: false,
-          backgroundImage: "linear-gradient(to bottom, #2d74da, #2367c8)"
+          submitDisabled: false
         })
       : this.setState({
-          submitDisabled: true,
-          backgroundImage: "linear-gradient(to bottom, #808080, #808080)"
+          submitDisabled: true
         });
   };
 
@@ -214,15 +212,11 @@ class EditComponent extends Component {
   };
 
   render() {
-    const styles = {
-      backgroundImage: this.state.backgroundImage
-    };
-
     return (
       <div
         key={this.props.post.id}
         className="post"
-        style={{ height: "720px" }}
+        style={{ height: "630px" }}
       >
         <form className="form" onSubmit={this.handleEdit}>
           {this.state.headerTouched ? (
@@ -238,7 +232,12 @@ class EditComponent extends Component {
 
           <label className="label headingLabel">Заголовок</label>
           <input
-            className="Rectangle-926-Copy-3 headingInput"
+            className={
+              "Rectangle-926-Copy-3 headingInput " +
+              (!this.state.headerValid && this.state.headerTouched
+                ? "errorBorder "
+                : "")
+            }
             type="text"
             ref={input => (this.getTitle = input)}
             onChange={e => this.handleHeaderChange(e)}
@@ -260,7 +259,12 @@ class EditComponent extends Component {
 
           <label className="label textLabel">Текст объявления</label>
           <textarea
-            className="Rectangle-926-Copy-6 textInput"
+            className={
+              "Rectangle-926-Copy-6 textInput " +
+              (!this.state.msgValid && this.state.msgTouched
+                ? "errorBorder "
+                : "")
+            }
             type="text"
             onChange={e => this.handleMsgChange(e)}
             onBlur={this.validateMsg}
@@ -280,7 +284,12 @@ class EditComponent extends Component {
 
           <label className="label telLabel">Телефон</label>
           <NumberFormat
-            className="Rectangle-926-Copy-3 telInput"
+            className={
+              "Rectangle-926-Copy-3 telInput " +
+              (!this.state.telValid && this.state.telTouched
+                ? "errorBorder "
+                : "")
+            }
             format="+7 (###) ###-##-##"
             mask="_"
             placeholder="+7 (___) ___ - __ - __"
@@ -293,12 +302,10 @@ class EditComponent extends Component {
           />
           <div className="">{this.state.telError}</div>
 
-          <button
-            className="BG"
-            disabled={this.state.submitDisabled}
-            style={styles}
-          >
-            <p className="bgText">Редактировать</p>
+          <button className="BG" disabled={this.state.submitDisabled}>
+            <p className="bgText" style={{ left: "25px" }}>
+              Редактировать
+            </p>
           </button>
         </form>
       </div>

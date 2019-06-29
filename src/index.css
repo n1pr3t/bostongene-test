@@ -122,7 +122,7 @@ a:hover {
   background-image: linear-gradient(to bottom, #2d74da, #2367c8);
   position: absolute;
   left: 327px;
-  top: 668px;
+  top: 535px;
 }
 
 .bgText {
@@ -226,7 +226,7 @@ a:hover {
   margin: 0 auto;
   position: absolute;
   left: 326px;
-  top: 758px;
+  top: 620px;
 }
 
 .post {
@@ -342,4 +342,15 @@ a:hover {
   position: absolute;
   left: 760px;
   top: 216px;
+}
+.errorBorder {
+  border: solid 1px #fa5e5b;
+}
+.reactImg {
+  width: 340px;
+  height: 200px;
+  border: solid 2px #ffffff;
+  position: absolute;
+  left: 326px;
+  top: 72px;
 }

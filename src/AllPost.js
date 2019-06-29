@@ -7,7 +7,7 @@ class AllPost extends Component {
     return (
       <div className="allPost">
         <h1 className="allPostHeading">Объявления</h1>
-        {this.props.posts.map(post => (
+        {this.props.posts.reverse().map(post => (
           <div key={post.id}>
             {post.editing ? (
               <EditComponent post={post} key={post.id} />

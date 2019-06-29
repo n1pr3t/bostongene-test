@@ -22,7 +22,7 @@ class PostForm extends Component {
       telValid: false,
       msgValid: false,
       submitDisabled: true,
-      backgroundImage: "linear-gradient(to bottom, #808080, #808080)",
+
       telInput: ""
     };
     this.baseState = this.state;
@@ -63,8 +63,7 @@ class PostForm extends Component {
     );
     headerValid && msgValid && telValid
       ? this.setState({
-          submitDisabled: false,
-          backgroundImage: "linear-gradient(to bottom, #2d74da, #2367c8)"
+          submitDisabled: false
         })
       : this.setState({ submitDisabled: true });
   };
@@ -218,11 +217,8 @@ class PostForm extends Component {
   };
 
   render() {
-    const styles = {
-      backgroundImage: this.state.backgroundImage
-    };
     return (
-      <div className="post-container" style={{ height: "720px" }}>
+      <div className="post-container" style={{ height: "630px" }}>
         <h1 className="post_heading">Подать объявление</h1>
         <form className="form" onSubmit={this.handleSubmit}>
           {this.state.headerTouched ? (
@@ -238,7 +234,12 @@ class PostForm extends Component {
 
           <label className="label headingLabel">Заголовок</label>
           <input
-            className="Rectangle-926-Copy-3 headingInput"
+            className={
+              "Rectangle-926-Copy-3 headingInput " +
+              (!this.state.headerValid && this.state.headerTouched
+                ? "errorBorder "
+                : "")
+            }
             type="text"
             ref={input => (this.getTitle = input)}
             onChange={e => this.handleHeaderChange(e)}
@@ -259,7 +260,12 @@ class PostForm extends Component {
 
           <label className="label textLabel">Текст объявления</label>
           <textarea
-            className="Rectangle-926-Copy-6 textInput"
+            className={
+              "Rectangle-926-Copy-6 textInput " +
+              (!this.state.msgValid && this.state.msgTouched
+                ? "errorBorder "
+                : "")
+            }
             type="text"
             onChange={e => this.handleMsgChange(e)}
             onBlur={this.validateMsg}
@@ -278,7 +284,12 @@ class PostForm extends Component {
 
           <label className="label telLabel">Телефон</label>
           <NumberFormat
-            className="Rectangle-926-Copy-3 telInput"
+            className={
+              "Rectangle-926-Copy-3 telInput " +
+              (!this.state.telValid && this.state.telTouched
+                ? "errorBorder "
+                : "")
+            }
             format="+7 (###) ###-##-##"
             mask="_"
             placeholder="+7 (___) ___ - __ - __"
@@ -291,11 +302,7 @@ class PostForm extends Component {
           />
           <div className="">{this.state.telError}</div>
 
-          <button
-            className="BG"
-            disabled={this.state.submitDisabled}
-            style={styles}
-          >
+          <button className="BG" disabled={this.state.submitDisabled}>
             <p className="bgText">Подать</p>
           </button>
         </form>
