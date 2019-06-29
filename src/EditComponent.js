@@ -135,37 +135,28 @@ class EditComponent extends Component {
   validateMsg = e => {
     const { msgValidationState } = this.state;
     this.setState({ msgTouched: true });
-    if (
-      this.state.msgValidationState.length > 0 &&
-      this.state.msgValidationState.length <= 300
-    ) {
+    if (msgValidationState.length > 300) {
       this.setState(
         {
           msgError: (
             <div>
-              <img src={successLogo} className="help-2" alt="?" />
-              <p className="helper textHelper success">Заполнено</p>
+              <img src={errorLogo} className="help-2" alt="?" />
+              <p className="helper textHelper error">Не более 300 символов</p>
             </div>
           ),
-          msgValid: true
+          msgValid: false
         },
         this.canSubmit
       );
     } else {
       this.setState({
-        msgError:
-          msgValidationState.length > 300 ? (
-            <div>
-              <img src={errorLogo} className="help-2" alt="?" />
-              <p className="helper textHelper error">Не более 300 символов</p>
-            </div>
-          ) : (
-            <div>
-              <img src={errorLogo} className="help-2" alt="?" />
-              <p className="helper textHelper error">Заполните поле</p>
-            </div>
-          ),
-        msgValid: false
+        msgError: (
+          <div>
+            <img src={successLogo} className="help-2" alt="?" />
+            <p className="helper textHelper success">Заполнено</p>
+          </div>
+        ),
+        msgValid: true
       });
     }
   };
